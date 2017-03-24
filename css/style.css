@@ -1,0 +1,10 @@
+body {
+    background: snow;
+    text-align: center;
+    margin-top: 150px;
+}
+
+#clock {
+    font-family: "Lato";
+    font-size: 80px;
+}
