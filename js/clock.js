@@ -1,3 +1,19 @@
+var hexclock = document.getElementById('hexclock');
+var togglehexclock = false;
+
+
+hexclock.addEventListener("click", function () {
+
+    if (togglehexclock === true) {
+        togglehexclock = false;
+        document.getElementById('hexclock').innerHTML = 'Set Hex-Clock ON'
+    } else {
+        togglehexclock = true;
+        document.getElementById('hexclock').innerHTML = 'Set Hex-Clock OFF'
+    }
+
+});
+
 function Clock() {
     var time;
     var interval;
@@ -23,6 +39,12 @@ function Clock() {
         var timeformat = hh + ':' + mm + ':' + ss;
 
         document.getElementById('clock').innerHTML = timeformat;
+        if (togglehexclock == true) {
+            document.bgColor = '#' + hh + mm + ss;
+        } else {
+            document.bgColor = 'cornflowerblue'
+        }
+
 
         checkClock();
     };
@@ -60,6 +82,7 @@ function Clock() {
     }
 
 
+    updateClock();
     interval = setInterval(updateClock, 1000);
 
 }

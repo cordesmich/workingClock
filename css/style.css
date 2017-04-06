@@ -1,5 +1,4 @@
 body {
-    background: cornflowerblue;
     text-align: center;
     margin-top: 150px;
     font-family: "Century Gothic";
@@ -10,4 +9,10 @@ body {
 }
 #text {
     font-size: 35px;
+}
+
+#hexclock {
+  position: fixed;
+  top: 20px;
+  left:  20px;
 }
