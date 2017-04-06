@@ -1,10 +1,13 @@
 body {
-    background: snow;
+    background: cornflowerblue;
     text-align: center;
     margin-top: 150px;
+    font-family: "Century Gothic";
 }
 
 #clock {
-    font-family: "Lato";
     font-size: 80px;
+}
+#text {
+    font-size: 35px;
 }

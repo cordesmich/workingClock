@@ -1,7 +1,7 @@
 function Clock() {
     var time;
     var interval;
-    var state = 'work'; // breakfast, lunch, end, home, work
+    var state = 'work'; // breakfast, lunch
     var stateTemp;
 
     function updateClock() {
@@ -29,44 +29,30 @@ function Clock() {
 
     function checkClock() {
 
+        //Check Time 
         if (time.getHours() == 9 && (time.getMinutes() >= 00 && time.getMinutes() <= 15)) {// check  breakfast
-            state = 'breakfast'
+            state = 'breakfast';
 
         } else if (time.getHours() == 12 && (time.getMinutes() >= 00 && time.getMinutes() <= 30)) {// check lunch
-            state = 'lunch'
-        } else if (time.getHours() == 16 && time.getMinutes() >= 30) {// check end of working day
-            state = 'end'
-        } else if (time.getHours() >= 17) {// at home
-            state = 'home'
-        } else if (time.getHours() >= 7 && time.getHours() <= 17) {// at home
-            state = 'work'
+            state = 'lunch';
         } else {
             state = 'none';
         }
 
+        //set value and icon
         if (state != stateTemp) {
             switch (state) {
                 case 'breakfast':
+                    document.getElementById('text').innerHTML = "It's time for breakfast    &#9749";
                     console.log('breakfast');
-
                     break;
                 case 'lunch':
+                    document.getElementById('text').innerHTML = "It's time for lunch    &#127837";
                     console.log('lunch');
-
                     break;
-                case 'end':
-                    console.log('end');
 
-                    break;
-                case 'home':
-                    console.log('home');
-
-                    break;
-                case 'work':
-                    console.log('work');
-
-                    break;
                 default:
+                    document.getElementById('text').innerHTML = "You have to work    &#9757";
                     break;
             }
             stateTemp = state;
